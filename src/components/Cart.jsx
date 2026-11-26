@@ -42,7 +42,11 @@ const Cart = () => {
                             cart.map(item => 
                                 <tr className="hover:bg-gray-50 transition-colors" key={item.id}>
                                     <td className="px-6 py-4 text-gray-400 font-normal">{item.id}</td>
+                                    <td>
+                                        <img src={item.imgUrl} alt="상품이미지" width="100px" />
+                                    </td>
                                     <td className="px-6 py-4 font-semibold text-gray-900">{item.item}</td>
+                                    <td>{item.price.toLocaleString()}원</td>
                                     <td className="px-6 py-4">
                                         <span className="bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-full font-bold">{item.amount}개</span>
                                     </td>
@@ -66,12 +70,8 @@ const Cart = () => {
                 </button>
             </div>
         </div>
-
-      
     </div>
   )
 }
-
-
 
 export default Cart
